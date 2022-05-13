@@ -11,10 +11,13 @@ const createWindow = () => {
         width: 800,
         height: 600,
         webPreferences: {
+            enableRemoteModule: true,
             nodeIntegration: true,
+            contextIsolation: false,
         },
     });
-
+    require("@electron/remote/main").initialize();
+    require("@electron/remote/main").enable(mainWindow.webContents);
     // and load the index.html of the app.
     mainWindow.loadURL(
         isDev
@@ -23,7 +26,7 @@ const createWindow = () => {
     );
 
     // Open the DevTools.
-    // mainWindow.webContents.openDevTools();
+    mainWindow.webContents.openDevTools();
 };
 
 // This method will be called when Electron has finished

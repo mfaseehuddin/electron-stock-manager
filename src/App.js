@@ -1,9 +1,25 @@
 import "./App.css";
+import Menubar from "./Components/Menubar/Menubar";
+import Dashboard from "./Components/Dashboard/Dashboard";
+import Stock from "./Components/Stock/Stock";
+import Purchase from "./Components/Purchase/Purchase";
+import Sale from "./Components/Sale/Sale";
+import DataManager from "./Components/DataManager/DataManager";
+import Clients from "./Components/Clients/Clients";
 
 function App() {
+    console.log("App Started");
+    DataManager();
+
     return (
         <div className="App">
-            <h1>Bare Minimum Electron-React</h1>
+            <Menubar>
+                <Dashboard className="Dashboard" />
+                <Stock className="Stock" />
+                <Purchase className="Purchase" />
+                <Sale className="Sale" />
+                <Clients className="Clients" />
+            </Menubar>
         </div>
     );
 }

@@ -1,0 +1,15 @@
+.Menubar{
+    display: flex;
+    height: 100vh;
+    padding: 10px;
+}
+
+.Sidebar{
+    background-color: aqua;
+    width: 30%;
+    
+}
+.Page{
+    background-color: bisque;
+    width: 70%;
+}
