@@ -38,3 +38,12 @@ export function loadData() {
     );
     return JSON.parse(fs.readFileSync(dataPath));
 }
+
+export function saveData(JSONData) {
+    let dataPath = path.join(
+        app.getPath("documents"),
+        "stock-manager/data.json"
+    );
+
+    fs.writeFileSync(dataPath, JSON.stringify(JSONData, null, 2));
+}
