@@ -44,7 +44,6 @@ export default function Sale() {
         } else {
             sale.SaleID = crypto.randomUUID();
             if (document.getElementById("clientID").value === "New") {
-                sale.clientID = crypto.randomUUID();
                 sale.newClient = true;
             } else {
                 sale.clientID = document.getElementById("clientID").value;
@@ -58,7 +57,7 @@ export default function Sale() {
             console.log(JSON.stringify(sale, null, 2));
             if (sale.newClient) {
                 data.clients.push({
-                    ClientID: sale.ClientID,
+                    ClientID: crypto.randomUUID(),
                     Name: sale.clientName,
                     Contact_Name: sale.contactName,
                     Contact_Number: sale.contactNumber,
@@ -104,6 +103,11 @@ export default function Sale() {
                             break;
                     }
                 }
+                var selects = document
+                    .getElementById("saleForm")
+                    .getElementsByTagName("select");
+                for (var i = 0; i < selects.length; i++)
+                    selects[i].selectedIndex = 0;
             }
         }
     }
@@ -170,6 +174,7 @@ export default function Sale() {
                                 sale.ProductID;
                         }}
                     >
+                        <option data-value="none">Select Product</option>
                         {data.stock.map((item) => (
                             <option
                                 key={item.StockID}

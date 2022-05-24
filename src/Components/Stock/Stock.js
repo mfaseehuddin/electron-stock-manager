@@ -19,7 +19,7 @@ export default function Stock() {
                                     {item.StockID}
                                 </small>
                             </div>
-                            <div>
+                            <div className="leftItem">
                                 <strong>Qty: {item.Quantity}</strong>
                                 <br />
                                 <small>
