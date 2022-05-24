@@ -1,0 +1,12 @@
+.stockItems
+ {   padding: 30px;}
+.item{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 5px;
+    background-color: yellow;
+}
+.leftItem{
+    text-align: right;
+}

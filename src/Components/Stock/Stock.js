@@ -1,8 +1,9 @@
 import React from "react";
-import { loadData } from "../DataManager/DataManager";
-import "./Stock.sass";
+import DataManager, { loadData } from "../DataManager/DataManager";
+import "./Stock.css";
 
 export default function Stock() {
+    DataManager();
     let data = loadData();
     return (
         <div>

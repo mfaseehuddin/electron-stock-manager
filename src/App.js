@@ -1,4 +1,4 @@
-import "./App.sass";
+import "./App.css";
 import Menubar from "./Components/Menubar/Menubar";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import Stock from "./Components/Stock/Stock";
